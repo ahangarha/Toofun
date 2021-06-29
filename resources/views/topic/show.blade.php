@@ -1,9 +1,9 @@
 <x-guest-layout>
     <div class="text-center max-w-xl mx-auto bg-gray-200 p-8 rounded-xl">
-        <h2 class="text-2xl font-bold">
+        <h2 class="text-2xl font-bold" dir="auto">
             {{ $topic->title }}
         </h2>
-        <p class="mt-8">
+        <p class="mt-8" dir="auto">
             {{ $topic->description }}
         </p>
 

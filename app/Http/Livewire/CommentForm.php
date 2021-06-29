@@ -9,7 +9,6 @@ class CommentForm extends Component
 {
     public String $token;
     public String $text = '';
-    // public Comment $comment;
 
     protected $rules = [
         'text' => 'required|string|min:10|max:1000',

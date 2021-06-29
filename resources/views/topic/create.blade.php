@@ -33,7 +33,8 @@
                                     <label for="title" class="block text-sm font-medium text-gray-700">
                                         Title
                                     </label>
-                                    <input type="text" name="title" id="title" minlength="5" maxlength="30" required
+                                    <input type="text" name="title" id="title" minlength="5" maxlength="80" required
+                                        dir="auto"
                                         class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
                                         placeholder="Some title for this topic">
                                     @error('title')
@@ -49,7 +50,7 @@
                                     Description
                                 </label>
                                 <div class="mt-1">
-                                    <textarea id="description" name="description" rows="3" required
+                                    <textarea id="description" name="description" rows="3" maxlength="1000" dir="auto"
                                         class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                                         placeholder="Add some description about this topic"></textarea>
                                 </div>

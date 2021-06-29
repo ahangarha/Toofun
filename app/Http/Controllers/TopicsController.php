@@ -38,8 +38,8 @@ class TopicsController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'description' => '',
+            'title' => 'required|string|max:80',
+            'description' => 'string|max:1000',
             'duration' => 'required|numeric|min:1|max:48',
         ]);
 
