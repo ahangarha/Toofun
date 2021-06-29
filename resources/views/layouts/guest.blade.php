@@ -26,17 +26,17 @@
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <!-- Mobile menu button-->
-                    <button type="button"
+                    <button type="button" x-on:click="show = !show"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true" x-show="!show" x-on:click="show = true" x-cloak>
+                            stroke="currentColor" aria-hidden="true" x-show="!show" x-cloak>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true" x-show="show" x-on:click="show = false" x-cloak>
+                            stroke="currentColor" aria-hidden="true" x-show="show" x-cloak>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -53,14 +53,15 @@
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            <a href="/"
+                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === null ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}"
                                 aria-current="page">Home</a>
 
                             <a href="{{ route('topic-index') }}"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Topic</a>
+                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === 'topic-index' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Topic</a>
 
                             <a href="{{ route('topic-create') }}"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">New
+                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === 'topic-create' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">New
                                 Topic</a>
                         </div>
                     </div>
@@ -69,17 +70,17 @@
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu" x-show="show">
+        <div class="sm:hidden" id="mobile-menu" x-show.transition="show">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                    aria-current="page">Home</a>
+                <a href="/"
+                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === null ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Home</a>
 
                 <a href="{{ route('topic-index') }}"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Topic</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === 'topic-index' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Topic</a>
 
                 <a href="{{ route('topic-create') }}"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">New
+                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === 'topic-create' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">New
                     Topic</a>
             </div>
         </div>
