@@ -2,12 +2,12 @@
     @csrf
     <div class="px-4 py-5 bg-white sm:p-6">
         <input type="hidden" wire:model="token" readonly>
-        <div class="relative">
-            <textarea id="description" name="description" rows="5" dir="auto" wire:model="text" required minlength="10"
-                maxlength="1000"
+        <div class="relative" x-data="{wordCount:0}">
+            <textarea id="comment" name="comment" rows="5" dir="auto" wire:model.lazy="text" required minlength="10"
+                maxlength="1000" x-on:keyup="wordCount = document.querySelector('textarea#comment').value.length"
                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                 placeholder="Add some description about this topic"></textarea>
-            <span class="absolute right-0 -bottom-4 text-xs text-gray-400">0/1000</span>
+            <span class="absolute right-0 -bottom-4 text-xs text-gray-400" x-text="wordCount+'/1000'">0/1000</span>
         </div>
         @error('token')
             <span class="text-red-500 text-xs">
