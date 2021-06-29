@@ -27,7 +27,6 @@
         @if (session()->has('message'))
             <div class="text-green-700 text-xs" x-data="{ show: true }"
                 x-init="setTimeout(() => { show = false }, 3000)" x-show.transition="show">
-                BLAH BLAH
                 {{ session('message') }}
             </div>
         @endif
