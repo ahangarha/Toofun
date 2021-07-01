@@ -19,74 +19,22 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-100">
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-gray-800" x-data="{show: false}">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button type="button" x-on:click="show = !show"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true" x-show="!show" x-cloak>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true" x-show="show" x-cloak>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="block lg:hidden h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
-                        <img class="hidden lg:block h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                            alt="Workflow">
-                    </div>
-                    <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
-                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="/"
-                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === null ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}"
-                                aria-current="page">Home</a>
+<body class="bg-gray-50" dir="auto">
 
-                            <a href="{{ route('topic-index') }}"
-                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === 'topic-index' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Topic</a>
+    @if (Route::currentRouteName() !== null)
+        <header class="absolute top-4 end-4 z-40 text-white md:opacity-30 md:hover:opacity-80 transition">
+            <a href="/" class="block p-2 border-2 rounded-lg">
+                <svg class="w-8 h-8 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+            </a>
+        </header>
+    @endif
 
-                            <a href="{{ route('topic-create') }}"
-                                class="px-3 py-2 rounded-md text-sm font-medium {{ Route::currentRouteName() === 'topic-create' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">New
-                                Topic</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu" x-show.transition="show">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/"
-                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === null ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Home</a>
-
-                <a href="{{ route('topic-index') }}"
-                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === 'topic-index' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Topic</a>
-
-                <a href="{{ route('topic-create') }}"
-                    class="block px-3 py-2 rounded-md text-base font-medium {{ Route::currentRouteName() === 'topic-create' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">New
-                    Topic</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="font-sans text-gray-900 antialiased max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 mt-16">
+    <div class="font-sans text-gray-900 antialiased max-w-7xl mx-auto">
         {{ $slot }}
     </div>
 
