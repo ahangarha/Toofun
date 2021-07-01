@@ -34,7 +34,7 @@
         </header>
     @endif
 
-    <div class="font-sans text-gray-900 antialiased max-w-7xl mx-auto">
+    <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>
 
