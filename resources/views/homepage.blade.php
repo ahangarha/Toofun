@@ -4,7 +4,7 @@
             <div class="w-120 h-120 -m-64 bg-purple-800 rounded-3xl transform rotate-45"></div>
         </div>
         <div class="relative mt-24 mb-24 md:mb-36" dir="auto">
-            <h2 class="text-2xl font-bold mb-4">Make an Storm</h2>
+            <h2 class="text-2xl font-bold mb-4">Make a Storm</h2>
             <p class="w-44 mx-auto">To start with brainstroming, make a topic and invite others for commenting.</p>
         </div>
     </div>
