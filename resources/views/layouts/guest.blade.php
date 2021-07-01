@@ -38,6 +38,12 @@
         {{ $slot }}
     </div>
 
+    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16">
+        Toofun in under AGPL.<br>
+        Visit <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
+            class="text-pink-400 underline">code repository</a> on Framagit.
+    </div>
+
     @livewireScripts
 </body>
 
