@@ -26,7 +26,7 @@ class TopicsController extends Controller
      */
     public function create()
     {
-        return view('topic.create');
+        return abort(403);
     }
 
     /**

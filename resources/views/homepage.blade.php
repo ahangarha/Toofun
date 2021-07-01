@@ -164,10 +164,9 @@
 
                 </div>
 
-
                 <div class="flex justify-between items-center px-4 py-3 bg-purple-100">
                     <div class="ps-4">{{-- MESSAGE --}}</div>
-                    <a :href="'/topics/'+url"
+                    <a :href="'/topic/'+url"
                         class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                         See
                     </a>
