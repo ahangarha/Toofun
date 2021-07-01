@@ -22,8 +22,8 @@ Route::get('/topic', [TopicsController::class, 'index'])->name('topic-index');
 Route::post('/topic', [TopicsController::class, 'store'])->name('topic-store');
 Route::get('/topic/{topic}', [TopicsController::class, 'show'])->name('topic-show');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';
