@@ -19,11 +19,17 @@
             @if ($topic->isOpen())
                 Commening is open for next {{ $topic->openFor() }}.
             @else
-                <div class="inline-block mx-auto mt-6 shadow py-4 px-10 bg-pink-600 font-bold rounded-full" dir="auto">
-                    Topic will expire in {{ $topic->expiresIn() }}.
-                    <br>
-                    NOTE: Comments are listed randomly.
-                </div>
+                @if ($topic->expired)
+                    <div class="inline-block mx-auto mt-10 shadow py-4 px-10 bg-pink-600 font-bold rounded-full"
+                        dir="auto">
+                        This topic has expired and wiped.
+                    </div>
+                @else
+                    <div class="inline-block mx-auto mt-6 shadow py-4 px-10 bg-pink-600 font-bold rounded-full" Topic
+                        will expire in {{ $topic->expiresIn() }}. <br>
+                        NOTE: Comments are listed randomly.
+                    </div>
+                @endif
             @endif
         </div>
 
