@@ -2,12 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Topic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use \Illuminate\Support\Str;
 
 class TopicsController extends Controller
 {
+    public function __construct()
+    {
+        // Get topics to get wiped
+        $topicsToExpire = Topic::where('expired', false)
+            ->where('created_at', '<', now()->subDays(7))
+            ->get();
+
+        foreach ($topicsToExpire as $key => $topicToExpire) {
+            // Delete associated comments
+            Comment::where('topic_token', $topicToExpire->token)->delete();
+
+            // Wipe meaningful data in the expired topic
+            $topicToExpire->update([
+                'title' => "*",
+                'description' => "*",
+                'duration' => 0,
+                'expired' => true,
+            ]);
+
+            Log::info(sprintf("Topic with token %s wipted and associated comments deleted.", $topicToExpire->token));
+        }
+    }
     /**
      * Display a listing of the resource.
      *

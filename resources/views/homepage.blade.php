@@ -21,13 +21,13 @@
         </div>
     </div>
 
-    <div class="flex flex-col gap-2 w-80 mx-auto my-16 text-center text-gray-700 text-md">
+    <div class="flex flex-col gap-2 w-80 mx-auto my-16 text-center text-gray-700 text-sm">
         <p>No registration needed.</p>
         <p>No personal information collected.</p>
         <p>Comments are anonymous.</p>
         <p>Comments are hidden during commenting time.</p>
         <p>Comments appear in random order.</p>
-        <p>Topics will be deleted after one week.</p>
+        <p>Topics will be wiped after one week.</p>
         <div class="w-4 h-4 transform rotate-45 bg-purple-800 mx-auto my-8"></div>
         <p>Toofun is a Free/Libre& Open Source software.</p>
     </div>
