@@ -6,7 +6,7 @@
             <label for="token" class="block text-sm font-bold text-gray-700">
                 {{ __('Your Comment') }}
             </label>
-            <textarea id="comment" name="comment" rows="5" dir="auto" wire:model.lazy="text" required minlength="10"
+            <textarea id="comment" name="comment" rows="5" dir="auto" wire:model.defer="text" required minlength="10"
                 maxlength="1000"
                 class="shadow-sm focus:ring-purple-500 focus:border-purple-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                 placeholder="{{ __('Comment Input Placeholder') }}"></textarea>
