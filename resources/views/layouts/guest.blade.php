@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __('Site Title') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.2/dist/font-face.css" />
@@ -39,9 +39,10 @@
     </div>
 
     <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16">
-        Toofun in under AGPL.<br>
-        Visit <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
-            class="text-pink-400 underline">code repository</a> on Framagit.
+        {{ __('License Notice') }}
+        <br>
+        <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
+            class="text-pink-400 underline">{{ __('Code Repository') }}</a>
     </div>
 
     @livewireScripts
