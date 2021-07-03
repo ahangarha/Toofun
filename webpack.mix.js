@@ -17,4 +17,8 @@ mix.js("resources/js/app.js", "public/js").postCss(
     [require("postcss-import"), require("tailwindcss"), require("autoprefixer")]
 );
 
+if (mix.inProduction()) {
+    mix.version();
+}
+
 mix.browserSync("https://toofun.test");
