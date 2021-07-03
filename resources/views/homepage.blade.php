@@ -58,7 +58,8 @@
                     </div>
                 </div>
 
-                <form action="{{ route('topic-store') }}" method="POST" class="h-full flex flex-col justify-between">
+                <form action="{{ route('topic-store', app()->getLocale()) }}" method="POST"
+                    class="h-full flex flex-col justify-between">
                     @csrf
                     <div class="px-4 py-5 bg-white space-y-6 my-4">
                         <div>
