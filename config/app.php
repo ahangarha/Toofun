@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('DEFAULT_LOCALE', 'en'),
 
     'all_locales' => [
         'en',
