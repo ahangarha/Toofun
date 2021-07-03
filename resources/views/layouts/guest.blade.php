@@ -21,9 +21,9 @@
 
 <body class="bg-gray-50" dir="auto">
 
-    @if (Route::currentRouteName() !== null)
+    @if (Route::currentRouteName() !== 'homepage')
         <header class="absolute top-4 end-4 z-40 text-white md:opacity-30 md:hover:opacity-80 transition">
-            <a href="/" class="block p-2 border-2 rounded-lg">
+            <a href="{{ route('homepage', app()->getLocale()) }}" class="block p-2 border-2 rounded-lg">
                 <svg class="w-8 h-8 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
