@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __('Site Title') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.2/dist/font-face.css" />
@@ -21,9 +21,9 @@
 
 <body class="bg-gray-50" dir="auto">
 
-    @if (Route::currentRouteName() !== null)
+    @if (Route::currentRouteName() !== 'homepage')
         <header class="absolute top-4 end-4 z-40 text-white md:opacity-30 md:hover:opacity-80 transition">
-            <a href="/" class="block p-2 border-2 rounded-lg">
+            <a href="{{ route('homepage', app()->getLocale()) }}" class="block p-2 border-2 rounded-lg">
                 <svg class="w-8 h-8 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -38,10 +38,23 @@
         {{ $slot }}
     </div>
 
-    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16">
-        Toofun in under AGPL.<br>
-        Visit <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
-            class="text-pink-400 underline">code repository</a> on Framagit.
+    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16 flex flex-col items-center">
+        @if (config('app.all_locales'))
+            <ul class="flex mb-8">
+                @foreach (config('app.all_locales') as $locale)
+                    <li class="">
+                        <a class="flex justify-center items-center w-8 h-8 hover:bg-purple-700 {{ app()->getLocale() === $locale ? 'bg-purple-900' : '' }}"
+                            href="{{ route('homepage', $locale) }}">{{ $locale }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+
+        {{ __('License Notice') }}
+
+        <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
+            class="text-pink-400 underline">{{ __('Code Repository') }}</a>
     </div>
 
     @livewireScripts

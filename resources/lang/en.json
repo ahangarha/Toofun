@@ -1,0 +1,40 @@
+{
+    "Site Title": "Toofun",
+    "License Notice": "Toofun in under AGPL.",
+    "Code Repository": "Code Repository",
+
+    "Main Title": "Make a Storm",
+    "Main Description": "To start with brainstroming, make a topic and invite others for commenting.",
+    "Create Topic": "Create Topic",
+    "See Topic": "See Topic",
+    "Features": "No registration needed.\n\nNo personal information collected.\n\nComments are anonymous.\n\nComments are hidden during commenting time.\n\nComments appear in random order.\n\nTopics will be wiped after one week.",
+    "FLOSS": "Toofun is a **Free/Libre & Open Source** software.",
+    "Create a New Topic": "Create a New Topic",
+    "Title": "Title",
+    "Title Input Placeholder": "Add some title",
+    "Description": "Description",
+    "Description Input Placeholder": "Add some description about this topic",
+    "Commenting Duration": "Duration for commenting",
+    "Hours": "Hours",
+    "Save": "Save",
+    "See a Topic": "See a Topic",
+    "Topic Token": "Topic's Token",
+    "Token Input Placeholder": "Token of the topic you want to see",
+    "Show": "Show",
+
+    "Topic": "Topic",
+    "Commenting Open Duration": "Commening is open for next :duration.",
+    "Topic Expired Notice": "This topic has expired and wiped.",
+    "Topic Will Expire": "Topic will expire in :duration.",
+    "Random Order Notice": "NOTE: Comments are listed randomly.",
+    "Your Comment": "Your Comment",
+    "Comment Input Placeholder": "Write you comment here",
+    "Token Validation Error": "There is an issue, connecting the comment to the topic.\n\nPlease check if the topic is still open for commenting.",
+    "Saving": "Saving...",
+    "Send": "Send",
+
+    "Comment Sent Successfully": "Comment Sent Successfully.",
+
+    "Notice": "Notice",
+    "Commenting Notice Items": "- Comments are stored anonymosly.\n- Comment remain hidden during commenting time.\n- Comments will be shown in random order."
+}

@@ -1,0 +1,40 @@
+{
+    "Site Title": "توفان",
+    "License Notice": "توفان تحت پروانه AGPL منتشر شده است.",
+    "Code Repository": "مخزن کد",
+
+    "Main Title": "توفان به پا کن",
+    "Main Description": "برای شروع توفان فکری، موضوع ایجاد کرده و دیگران را برای نظر دادن دعوت کن.",
+    "Create Topic": "ایجاد موضوع",
+    "See Topic": "دیدن موضوع",
+    "Features": "نیاز به ثبت‌نام نیست.\n\nاطلاعات شخصی گردآوری نمی‌کند.\n\nنظرات ناشناس هستند.\n\nدر طور نظردهی، نظرات پنهان‌اند.\n\nترتیب نظرات،‌تصادفی است.\n\nموضوعات یک هفته بعد پاک می‌شوند.",
+    "FLOSS": "توفان یک **نرم‌افزار آزاد** است.",
+    "Create a New Topic": "موضوع جدیدی بسازید",
+    "Title": "عنوان",
+    "Title Input Placeholder": "عنوانی وارد کنید",
+    "Description": "توضیحات",
+    "Description Input Placeholder": "توضیحاتی وارد کنید",
+    "Commenting Duration": "طول مدت نظردهی",
+    "Hours": "ساعت",
+    "Save": "ذخیره",
+    "See a Topic": "یک موضوع را ببینید",
+    "Topic Token": "شناسه موضوع",
+    "Token Input Placeholder": "شناسه موضوعی که می‌خواهید ببینید",
+    "Show": "نمایش",
+
+    "Topic": "موضوع",
+    "Commenting Open Duration": "نظردهی برای :duration باز است.",
+    "Topic Expired Notice": "موضوع منقضی و اطلاعات‌اش پاک شده است",
+    "Topic Will Expire": "موضوع تا :duration منقضی می‌شود.",
+    "Random Order Notice": "توجه: ترتیب نظرات، تصادفی است.",
+    "Your Comment": "نظر شما",
+    "Comment Input Placeholder": "نظرتان را اینجا بنویسید",
+    "Token Validation Error": "مشکلی در ایجاد ارتباط میان نظر و موضوع پیش آمده است.\n\nلطفا برسی کنید که موضوع همچنان برای نظردهی باز باشد.",
+    "Saving": "در حال ذخیره...",
+    "Send": "ارسال",
+
+    "Comment Sent Successfully": "نظر با موفقیت فرستاده شد.",
+
+    "Notice": "توجه",
+    "Commenting Notice Items": "- نظرات به طور ناشناس ذخیره می‌شوند.\n- نظرات تا پایان زمان نظردهی، مخفی هستند.\n- نظرات با ترتیب تصادفی نمایش خواهند یافت."
+}

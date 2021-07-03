@@ -79,7 +79,7 @@ class TopicsController extends Controller
             $token = $this->generateToken();
         }
 
-        return redirect(route('topic-show', ['topic' => $token]));
+        return redirect(route('topic-show', ['language' => app()->getLocale(), 'topic' => $token]));
     }
 
     /**
@@ -88,7 +88,7 @@ class TopicsController extends Controller
      * @param  App\Models\Topic
      * @return \Illuminate\Http\Response
      */
-    public function show(Topic $topic)
+    public function show(String $locale, Topic $topic)
     {
         return view('topic.show', [
             'topic' => $topic,

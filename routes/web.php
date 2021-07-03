@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TopicsController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::redirect('/', app()->getLocale());
 
-Route::get('/topic', [TopicsController::class, 'index'])->name('topic-index');
-Route::post('/topic', [TopicsController::class, 'store'])->name('topic-store');
-Route::get('/topic/{topic}', [TopicsController::class, 'show'])->name('topic-show');
+Route::group([
+    'prefix' => '{language}',
+    'where' => ['locale' => '[a-z]{2}'],
+], function () {
+    Route::get('/', function () {
+        return view('homepage');
+    })->name('homepage');
+
+    Route::redirect('/topic', '/#seeTopic');
+    Route::post('/topic', [TopicsController::class, 'store'])->name('topic-store');
+    Route::get('/topic/{topic}', [TopicsController::class, 'show'])->name('topic-show');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

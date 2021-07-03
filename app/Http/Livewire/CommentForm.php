@@ -24,7 +24,7 @@ class CommentForm extends Component
         $comment->text = $this->text;
         $comment->save();
         $this->text = '';
-        session()->flash('message', 'Post successfully updated.');
+        session()->flash('message', __('Comment Sent Successfully'));
     }
 
     public function render()
