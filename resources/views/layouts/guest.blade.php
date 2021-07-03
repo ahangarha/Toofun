@@ -38,7 +38,7 @@
         {{ $slot }}
     </div>
 
-    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16 flex flex-col items-center">
+    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 mt-16 flex flex-col items-center">
         @if (config('app.all_locales'))
             <ul class="flex mb-8">
                 @foreach (config('app.all_locales') as $locale)
