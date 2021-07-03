@@ -64,3 +64,11 @@ h3 {
 [x-cloak] {
     display: none !important;
 }
+
+.list ul,
+.list ol {
+    @apply ps-4;
+}
+.list li {
+    list-style: disc;
+}

@@ -33,5 +33,8 @@
     "Saving": "Saving...",
     "Send": "Send",
 
-    "Comment Sent Successfully": "Comment Sent Successfully."
+    "Comment Sent Successfully": "Comment Sent Successfully.",
+
+    "Notice": "Notice",
+    "Commenting Notice Items": "- Comments are stored anonymosly.\n- Comment remain hidden during commenting time.\n- Comments will be shown in random order."
 }

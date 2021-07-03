@@ -37,6 +37,10 @@
             <div class="max-w-lg mx-auto border rounded-3xl overflow-hidden bg-white shadow">
                 <livewire:comment-form token="{{ $topic->token }}">
             </div>
+            <div class="max-w-lg mx-auto mt-8 text-sm text-gray-500 list">
+                <h3 class="mb-4">{{ __('Notice') }}:</h3>
+                {!! Str::markdown(__('Commenting Notice Items')) !!}
+            </div>
         @else
             <div class="max-w-xl mx-auto mt-12">
                 <livewire:comments-list :comments="$comments">
