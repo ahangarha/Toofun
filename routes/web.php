@@ -23,7 +23,7 @@ Route::group([
 ], function () {
     Route::get('/', function () {
         return view('homepage');
-    });
+    })->name('homepage');
 
     Route::redirect('/topic', '/#seeTopic');
     Route::post('/topic', [TopicsController::class, 'store'])->name('topic-store');

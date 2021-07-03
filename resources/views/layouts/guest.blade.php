@@ -38,9 +38,21 @@
         {{ $slot }}
     </div>
 
-    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16">
+    <div class="bg-purple-800 text-white text-center text-sm py-8 px-4 my-16 flex flex-col items-center">
+        @if (config('app.all_locales'))
+            <ul class="flex mb-8">
+                @foreach (config('app.all_locales') as $locale)
+                    <li class="">
+                        <a class="flex justify-center items-center w-8 h-8 hover:bg-purple-700 {{ app()->getLocale() === $locale ? 'bg-purple-900' : '' }}"
+                            href="{{ route('homepage', $locale) }}">{{ $locale }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+
         {{ __('License Notice') }}
-        <br>
+
         <a href="https://framagit.org/ahangarha/toofun" target="_blank" rel="noopener noreferrer"
             class="text-pink-400 underline">{{ __('Code Repository') }}</a>
     </div>
