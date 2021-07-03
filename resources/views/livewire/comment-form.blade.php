@@ -4,18 +4,16 @@
         <input type="hidden" wire:model="token" readonly>
         <div class="relative">
             <label for="token" class="block text-sm font-bold text-gray-700">
-                Your Comment
+                {{ __('Your Comment') }}
             </label>
             <textarea id="comment" name="comment" rows="5" dir="auto" wire:model.lazy="text" required minlength="10"
                 maxlength="1000"
                 class="shadow-sm focus:ring-purple-500 focus:border-purple-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                placeholder="Add some description about this topic"></textarea>
+                placeholder="{{ __('Comment Input Placeholder') }}"></textarea>
         </div>
         @error('token')
             <span class="text-red-500 text-xs">
-                There is an issue, connecting the comment to the topic.
-                <br>
-                Please check if the topic is still open for commenting.
+                {!! Str::markdown(__('Token Validation Error')) !!}
             </span>
         @enderror
         @error('text')
@@ -24,7 +22,7 @@
     </div>
     <div class="flex items-center justify-end gap-4 px-4 py-3 bg-gray-100 sm:px-6">
         <div wire:loading class="text-sm text-gray-400">
-            Saving...
+            {{ __('Saving') }}
         </div>
         @if (session()->has('message'))
             <div class="text-green-700 text-xs" x-data="{ show: true }"
@@ -34,7 +32,7 @@
         @endif
         <button type="submit"
             class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-            Send
+            {{ __('Send') }}
         </button>
     </div>
 </form>
